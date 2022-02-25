@@ -1,13 +1,13 @@
 variable "kv_name" {
-  type = string
+  type        = string
   description = "The name of the Key Vault"
-  
+
 }
 
 /***** COMMON VARIABLES *****/
 
 variable "resource_group_name" {
-  type = string
+  type        = string
   description = "The name of the Resource Group to create the resources in."
 }
 
@@ -23,7 +23,7 @@ variable "tags" {
   }
 }
 
-/*** RBAC ***/ 
+/*** RBAC ***/
 variable "enable_rbac_authorization" {
   type        = bool
   description = "Boolean flag to specify whether Azure Key Vault uses Role Based Access Control (RBAC) for authorization of data actions."
@@ -44,15 +44,15 @@ variable "reader_objects_ids" {
 
 /*** KV Network ACLS ***/
 variable "ip_rules" {
-  type = list
+  type        = list(any)
   description = "One or more IP Addresses, or CIDR Blocks which should be able to access the Key Vault."
-  default = []
+  default     = []
 }
 
 variable "virtual_network_subnet_ids" {
-  type = list
+  type        = list(any)
   description = "One or more Subnet ID's which should be able to access this Key Vault."
-  default = []
+  default     = []
 }
 
 /*** KV Properties ***/

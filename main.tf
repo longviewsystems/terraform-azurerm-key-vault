@@ -5,7 +5,7 @@ data "azurerm_resource_group" "rg" {
 }
 
 
-resource "azurerm_key_vault" "KV" {
+resource "azurerm_key_vault" "kv" {
   name                        = var.kv_name
   resource_group_name         = data.azurerm_resource_group.rg.name
   location                    = data.azurerm_resource_group.rg.location
@@ -18,9 +18,9 @@ resource "azurerm_key_vault" "KV" {
   sku_name = var.sku_name
 
   network_acls {
-    bypass = var.network_acl_bypass
-    default_action = "Deny"
-    ip_rules       = var.ip_rules
+    bypass                     = var.network_acl_bypass
+    default_action             = "Deny"
+    ip_rules                   = var.ip_rules
     virtual_network_subnet_ids = var.virtual_network_subnet_ids
   }
 }
