@@ -2,7 +2,7 @@
 
 SHELL := /bin/bash
 
-azdo-agent-test:
+tf-test:
 	echo "Calling azdo-agent-test"	
 	go test -v -timeout 45m
 clean:
