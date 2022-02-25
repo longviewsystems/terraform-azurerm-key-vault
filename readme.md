@@ -1,5 +1,5 @@
-# Solution Description
-This solution creates a Key Vault to hold secrets.
+# Description
+This module creates a Key Vault to hold secrets.
 * Supports RBAC security for the Key Vault.  Following roles are supported:
   * Key Vault Administrator
   * reader_objects_ids are added to "Key Vault Reader" and "Key Vault Secrets User"
