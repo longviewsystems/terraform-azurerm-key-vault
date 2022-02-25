@@ -1,3 +1,5 @@
+## [1.0.1](https://github.com/longviewsystems/terrafrom-azurerm-key-vault/compare/1.0.0...1.0.1) (2022-02-25)
+
 # 1.0.0 (2022-02-25)
 
 
