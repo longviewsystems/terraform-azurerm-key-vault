@@ -20,7 +20,7 @@ This module creates a Key Vault to hold secrets.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 2.99.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 2.88.1, < 3.0.0 |
 
 ## Modules
 
