@@ -13,13 +13,13 @@ resource "azurerm_key_vault" "kv" {
   tenant_id                   = data.azurerm_client_config.current.tenant_id
   enable_rbac_authorization   = var.enable_rbac_authorization
   soft_delete_retention_days  = 7
-  purge_protection_enabled    = true
+  purge_protection_enabled    = false
 
   sku_name = var.sku_name
 
   network_acls {
     bypass                     = var.network_acl_bypass
-    default_action             = "Deny"
+    default_action             = var.default_action
     ip_rules                   = var.ip_rules
     virtual_network_subnet_ids = var.virtual_network_subnet_ids
   }
