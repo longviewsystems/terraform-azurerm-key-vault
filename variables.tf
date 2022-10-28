@@ -67,9 +67,13 @@ variable "enabled_for_disk_encryption" {
   description = "Boolean flag to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys."
   default     = false
 }
-
+variable "default_action" {
+  type        = string
+  description = "specificy value Deny if Keyvault needs to allowed only by private networks. Possible values are Deny and Allow."
+  default     = "Allow"
+}
 variable "network_acl_bypass" {
   type        = string
-  description = "pecifies which traffic can bypass the network rules. Possible values are AzureServices and None."
+  description = "specifies which traffic can bypass the network rules. Possible values are AzureServices and None."
   default     = "None"
 }
