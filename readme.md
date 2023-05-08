@@ -14,13 +14,13 @@ This module creates a Key Vault to hold secrets.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.8 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 2.88.1, < 3.0.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=3.0.0, <4.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 2.88.1, < 3.0.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >=3.0.0, <4.0.0 |
 
 ## Modules
 
@@ -42,11 +42,12 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_admin_objects_ids"></a> [admin\_objects\_ids](#input\_admin\_objects\_ids) | Ids of the objects that can do all operations on all keys, secrets and certificates | `list(string)` | `[]` | no |
+| <a name="input_default_action"></a> [default\_action](#input\_default\_action) | specificy value Deny if Keyvault needs to allowed only by private networks. Possible values are Deny and Allow. | `string` | `"Allow"` | no |
 | <a name="input_enable_rbac_authorization"></a> [enable\_rbac\_authorization](#input\_enable\_rbac\_authorization) | Boolean flag to specify whether Azure Key Vault uses Role Based Access Control (RBAC) for authorization of data actions. | `bool` | `true` | no |
 | <a name="input_enabled_for_disk_encryption"></a> [enabled\_for\_disk\_encryption](#input\_enabled\_for\_disk\_encryption) | Boolean flag to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys. | `bool` | `false` | no |
 | <a name="input_ip_rules"></a> [ip\_rules](#input\_ip\_rules) | One or more IP Addresses, or CIDR Blocks which should be able to access the Key Vault. | `list(any)` | `[]` | no |
 | <a name="input_kv_name"></a> [kv\_name](#input\_kv\_name) | The name of the Key Vault | `string` | n/a | yes |
-| <a name="input_network_acl_bypass"></a> [network\_acl\_bypass](#input\_network\_acl\_bypass) | pecifies which traffic can bypass the network rules. Possible values are AzureServices and None. | `string` | `"None"` | no |
+| <a name="input_network_acl_bypass"></a> [network\_acl\_bypass](#input\_network\_acl\_bypass) | specifies which traffic can bypass the network rules. Possible values are AzureServices and None. | `string` | `"None"` | no |
 | <a name="input_reader_objects_ids"></a> [reader\_objects\_ids](#input\_reader\_objects\_ids) | Ids of the objects that can read all keys, secrets and certificates | `list(string)` | `[]` | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | The name of the Resource Group to create the resources in. | `string` | n/a | yes |
 | <a name="input_sku_name"></a> [sku\_name](#input\_sku\_name) | The Name of the SKU used for this Key Vault. Possible values are: Standard, and Premium. | `string` | `"standard"` | no |
