@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/longviewsystems/terraform-azurerm-key-vault/compare/1.1.0...1.2.0) (2023-05-08)
+
+
+### Bug Fixes
+
+* add tags ([a58c31e](https://github.com/longviewsystems/terraform-azurerm-key-vault/commit/a58c31ef9b41ebd7e7922a97fa13addfcaf348e2))
+
+
+### Features
+
+* update utils ([2cd422f](https://github.com/longviewsystems/terraform-azurerm-key-vault/commit/2cd422ff5699501eebe0ab4f2c1145f250b5621a))
+
 # [1.1.0](https://github.com/longviewsystems/terraform-azurerm-key-vault/compare/1.0.2...1.1.0) (2022-11-17)
 
 
