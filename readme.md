@@ -48,6 +48,7 @@ No modules.
 | <a name="input_ip_rules"></a> [ip\_rules](#input\_ip\_rules) | One or more IP Addresses, or CIDR Blocks which should be able to access the Key Vault. | `list(any)` | `[]` | no |
 | <a name="input_kv_name"></a> [kv\_name](#input\_kv\_name) | The name of the Key Vault | `string` | n/a | yes |
 | <a name="input_network_acl_bypass"></a> [network\_acl\_bypass](#input\_network\_acl\_bypass) | specifies which traffic can bypass the network rules. Possible values are AzureServices and None. | `string` | `"None"` | no |
+| <a name="input_purge_protection_enabled"></a> [purge\_protection\_enabled](#input\_purge\_protection\_enabled) | Enable Purge Protection the the Key Vault.  Once enabled, it cannot be disabled. | `bool` | `false` | no |
 | <a name="input_reader_objects_ids"></a> [reader\_objects\_ids](#input\_reader\_objects\_ids) | Ids of the objects that can read all keys, secrets and certificates | `list(string)` | `[]` | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | The name of the Resource Group to create the resources in. | `string` | n/a | yes |
 | <a name="input_sku_name"></a> [sku\_name](#input\_sku\_name) | The Name of the SKU used for this Key Vault. Possible values are: Standard, and Premium. | `string` | `"standard"` | no |

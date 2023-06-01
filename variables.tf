@@ -51,7 +51,7 @@ variable "ip_rules" {
 
 variable "virtual_network_subnet_ids" {
   type        = list(any)
-  description = "One or more Subnet ID's which should be able to access this Key Vault."
+  description = "A list of subnet resource ids that can communicate with the Storage Account."
   default     = []
 }
 
@@ -67,13 +67,49 @@ variable "enabled_for_disk_encryption" {
   description = "Boolean flag to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap keys."
   default     = false
 }
+
+variable "purge_protection_enabled" {
+  type        = bool
+  description = "Enable Purge Protection the the Key Vault.  Once enabled, it cannot be disabled."
+  default     = false
+}
+
 variable "default_action" {
   type        = string
   description = "specificy value Deny if Keyvault needs to allowed only by private networks. Possible values are Deny and Allow."
   default     = "Allow"
 }
+
 variable "network_acl_bypass" {
   type        = string
   description = "specifies which traffic can bypass the network rules. Possible values are AzureServices and None."
   default     = "None"
+}
+
+/***************************************************************/
+/*** Private End-points
+/***************************************************************/
+
+variable "create_private_endpoint" {
+  type        = string
+  default     = false
+  description = "Will create a service endpoint if set to True"
+}
+
+variable "private_dns_zone_group_name" {
+  type        = string
+  description = "The name of the Private DNS Zone Group. "
+  default     = "private-dns-zone-group"
+}
+
+variable "private_endpoint_subnet_id" {
+  type        = string
+  description = "Subnet ID used for private endpoint."
+  default     = null
+}
+
+variable "kv_private_dns_zone_ids" {
+  type        = list(string)
+  description = "Private DNS Zone Ids for the blob service of Azure Storage Account."
+  default     = null
 }
