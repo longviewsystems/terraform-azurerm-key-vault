@@ -1,3 +1,14 @@
+# [2.1.0](https://github.com/longviewsystems/terraform-azurerm-key-vault/compare/2.0.0...2.1.0) (2023-06-01)
+
+
+### Features
+
+* add pe ([431cc37](https://github.com/longviewsystems/terraform-azurerm-key-vault/commit/431cc375c67a7e7a58422c02740ecbe02780d154))
+* add pe ([abec26f](https://github.com/longviewsystems/terraform-azurerm-key-vault/commit/abec26fb55b306f19bd9e441d100ac151b63e308))
+* add pe ([9b05190](https://github.com/longviewsystems/terraform-azurerm-key-vault/commit/9b0519064939721ddf9652dafe1fb667ee059626))
+* Add private endpoint support ([79eba35](https://github.com/longviewsystems/terraform-azurerm-key-vault/commit/79eba357c55bf95dc82fbde809be4988ba879aa0))
+* add provider ([de22377](https://github.com/longviewsystems/terraform-azurerm-key-vault/commit/de22377fe36a485fd6d9b94f4939d96f4f99de13))
+
 # [1.2.0](https://github.com/longviewsystems/terraform-azurerm-key-vault/compare/1.1.0...1.2.0) (2023-05-08)
 
 
