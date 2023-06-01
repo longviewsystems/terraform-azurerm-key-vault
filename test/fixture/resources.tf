@@ -12,6 +12,16 @@ module "naming" {
   unique-length          = 4
 }
 
+module "pe_naming" {
+  source  = "Azure/naming/azurerm"
+  version = "0.1.1"
+  prefix  = ["mod", "test2"]
+  # suffix = random_string.random.value
+
+  unique-include-numbers = false
+  unique-length          = 4
+}
+
 /*****************************************
 /*   Resource Group
 /*****************************************/
@@ -50,7 +60,7 @@ resource "azurerm_subnet" "fixture" {
 
   private_link_service_network_policies_enabled = true
 
-  #service_endpoints = ["Microsoft.Storage"]
+  service_endpoints = ["Microsoft.KeyVault"]
 }
 
 resource "azurerm_private_dns_zone" "fixture" {
