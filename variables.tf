@@ -43,6 +43,19 @@ variable "reader_objects_ids" {
 }
 
 /*** KV Network ACLS ***/
+variable "public_network_access_enabled" {
+  type        = bool
+  description = "(Optional) Whether public network access is allowed for this Key Vault. Defaults to true."
+  default     = false
+}
+
+
+variable "default_action" {
+  type        = string
+  description = "specificy value Deny if Keyvault needs to allowed only by private networks. Possible values are Deny and Allow."
+  default     = "Allow"
+}
+
 variable "ip_rules" {
   type        = list(any)
   description = "One or more IP Addresses, or CIDR Blocks which should be able to access the Key Vault."
@@ -53,6 +66,12 @@ variable "virtual_network_subnet_ids" {
   type        = list(any)
   description = "A list of subnet resource ids that can communicate with the Storage Account."
   default     = []
+}
+
+variable "network_acl_bypass" {
+  type        = string
+  description = "specifies which traffic can bypass the network rules. Possible values are AzureServices and None."
+  default     = "None"
 }
 
 /*** KV Properties ***/
@@ -74,17 +93,14 @@ variable "purge_protection_enabled" {
   default     = false
 }
 
-variable "default_action" {
-  type        = string
-  description = "specificy value Deny if Keyvault needs to allowed only by private networks. Possible values are Deny and Allow."
-  default     = "Allow"
+variable "soft_delete_retention_days" {
+  type        = number
+  description = "The number of days that items should be retained for once soft-deleted. This value can be between 7 and 90 (the default) days."
+  default     = 7
 }
 
-variable "network_acl_bypass" {
-  type        = string
-  description = "specifies which traffic can bypass the network rules. Possible values are AzureServices and None."
-  default     = "None"
-}
+
+
 
 /***************************************************************/
 /*** Private End-points

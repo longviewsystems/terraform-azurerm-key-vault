@@ -34,10 +34,12 @@ resource "azurerm_key_vault" "kv" {
   enabled_for_disk_encryption = var.enabled_for_disk_encryption
   tenant_id                   = data.azurerm_client_config.current.tenant_id
   enable_rbac_authorization   = var.enable_rbac_authorization
-  soft_delete_retention_days  = 7
+  soft_delete_retention_days  = var.soft_delete_retention_days
   purge_protection_enabled    = var.purge_protection_enabled
 
   sku_name = var.sku_name
+
+  public_network_access_enabled = var.public_network_access_enabled
 
   network_acls {
     bypass                     = var.network_acl_bypass
