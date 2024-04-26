@@ -36,7 +36,6 @@ No modules.
 | [azurerm_role_assignment.rbac_keyvault_reader](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.rbac_keyvault_secrets_users](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment) | resource |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/client_config) | data source |
-| [azurerm_resource_group.rg](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
 
 ## Inputs
 
@@ -50,6 +49,7 @@ No modules.
 | <a name="input_ip_rules"></a> [ip\_rules](#input\_ip\_rules) | One or more IP Addresses, or CIDR Blocks which should be able to access the Key Vault. | `list(any)` | `[]` | no |
 | <a name="input_kv_name"></a> [kv\_name](#input\_kv\_name) | The name of the Key Vault | `string` | n/a | yes |
 | <a name="input_kv_private_dns_zone_ids"></a> [kv\_private\_dns\_zone\_ids](#input\_kv\_private\_dns\_zone\_ids) | Private DNS Zone Ids for the blob service of Azure Storage Account. | `list(string)` | `null` | no |
+| <a name="input_location"></a> [location](#input\_location) | The location/region where the resource group will be created. | `string` | n/a | yes |
 | <a name="input_network_acl_bypass"></a> [network\_acl\_bypass](#input\_network\_acl\_bypass) | specifies which traffic can bypass the network rules. Possible values are AzureServices and None. | `string` | `"None"` | no |
 | <a name="input_private_dns_zone_group_name"></a> [private\_dns\_zone\_group\_name](#input\_private\_dns\_zone\_group\_name) | The name of the Private DNS Zone Group. | `string` | `"private-dns-zone-group"` | no |
 | <a name="input_private_endpoint_subnet_id"></a> [private\_endpoint\_subnet\_id](#input\_private\_endpoint\_subnet\_id) | Subnet ID used for private endpoint. | `string` | `null` | no |

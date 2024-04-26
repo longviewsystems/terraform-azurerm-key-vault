@@ -25,7 +25,7 @@ module "kv_test_with_pe" {
   source = "../../"
 
   resource_group_name = azurerm_resource_group.fixture.name
-  location = azurerm_resource_group.fixture.location
+  location            = azurerm_resource_group.fixture.location
 
 
   kv_name = module.pe_naming.key_vault.name_unique

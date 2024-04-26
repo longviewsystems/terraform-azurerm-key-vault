@@ -25,8 +25,8 @@ resource "azurerm_private_endpoint" "sa" {
 
 resource "azurerm_key_vault" "kv" {
   name                        = var.kv_name
-  location            = var.location
-  resource_group_name = var.resource_group_name
+  location                    = var.location
+  resource_group_name         = var.resource_group_name
   enabled_for_disk_encryption = var.enabled_for_disk_encryption
   tenant_id                   = data.azurerm_client_config.current.tenant_id
   enable_rbac_authorization   = var.enable_rbac_authorization
