@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/longviewsystems/terraform-azurerm-key-vault/compare/2.1.0...2.2.0) (2024-04-26)
+
+
+### Features
+
+* BREAKING CHANGE - add location ([560aff2](https://github.com/longviewsystems/terraform-azurerm-key-vault/commit/560aff21c3b342c80f50c9c6887b40ec7a2a9a33))
+
 # [2.1.0](https://github.com/longviewsystems/terraform-azurerm-key-vault/compare/2.0.0...2.1.0) (2023-06-01)
 
 
