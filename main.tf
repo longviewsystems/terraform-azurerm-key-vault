@@ -1,14 +1,10 @@
 data "azurerm_client_config" "current" {}
 
-data "azurerm_resource_group" "rg" {
-  name = var.resource_group_name
-}
-
 resource "azurerm_private_endpoint" "sa" {
   count               = var.create_private_endpoint ? 1 : 0
   name                = "${var.kv_name}-kv-pe"
-  location            = data.azurerm_resource_group.rg.location
-  resource_group_name = data.azurerm_resource_group.rg.name
+  location            = var.location
+  resource_group_name = var.resource_group_name
   subnet_id           = var.private_endpoint_subnet_id
 
   private_dns_zone_group {
@@ -29,8 +25,8 @@ resource "azurerm_private_endpoint" "sa" {
 
 resource "azurerm_key_vault" "kv" {
   name                        = var.kv_name
-  resource_group_name         = data.azurerm_resource_group.rg.name
-  location                    = data.azurerm_resource_group.rg.location
+  location                    = var.location
+  resource_group_name         = var.resource_group_name
   enabled_for_disk_encryption = var.enabled_for_disk_encryption
   tenant_id                   = data.azurerm_client_config.current.tenant_id
   enable_rbac_authorization   = var.enable_rbac_authorization
